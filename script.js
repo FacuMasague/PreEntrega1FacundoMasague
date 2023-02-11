@@ -1,9 +1,4 @@
-/* Simulador interactivo que le permite al usuario calcular su nota del trimestre
-Pasos que sigue el simulador:
-1= Le pide el nombre al usuario
-2= Le hace elegir al usuario si quiere ver que notas son aprobado y que notas son desaprobado o si quiere calcular su nota
-3= Le pide al usuario entre cuantas notas debe ser el calculo
-4= Utilizando condicionales, toma la cantidad de notas que informa el usuario y hace un calculo a base de eso */
+/* Simulador interactivo que le permite al usuario calcular su nota del trimestre */
 
 let nombreDeUsuario = prompt("Porfavor, ingrese su nombre")
 
