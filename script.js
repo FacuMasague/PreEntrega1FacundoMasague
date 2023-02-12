@@ -5,15 +5,33 @@ Pasos que sigue el simulador:
 3= Le pide al usuario entre cuantas notas debe ser el calculo
 4= Utilizando condicionales, toma la cantidad de notas que informa el usuario y hace un calculo a base de eso */
 
-let nombreDeUsuario = prompt("Porfavor, ingrese su nombre")
+const nombreDeUsuario = prompt("Porfavor, ingrese su nombre")
 
-let opc1 = prompt(`Buen dia ` + nombreDeUsuario + `, eliga una de las siguientes opciones (Escriba su respectivo numero para elegir)
+const opc1 = prompt(`Buen dia ` + nombreDeUsuario + `, eliga una de las siguientes opciones (Escriba su respectivo numero para elegir)
 1: Calcular Promedio
 2: Parametros de aprobado/desaprobado (Mirar desde la consola)`)
 
 
 
 if (opc1 == "1") {
+    let suma = 0
+    let division = 0
+    let calculoSuma = true
+
+    while(calculoSuma) {
+        division++
+        let sumaNueva = prompt(`Ingrese la nota
+        Si ha finalizado ingresando sus notas escriba "Listo"`)
+
+        if (sumaNueva == "Listo") {
+            calculoSuma = false
+        } else {
+            suma = suma + parseInt(sumaNueva)
+        }
+    }
+
+    let resultado = suma / (division - 1)
+    notaFinal(resultado)
 
     function notaFinal(nota) {
         if (nota >= 7) {
@@ -22,25 +40,6 @@ if (opc1 == "1") {
             alert("Su nota es un " + nota + ", usted no a aprobado")
         }
     }
-
-    let suma = 0
-    let division = true
-
-    while(division) {
-        division++
-        let sumaNueva = prompt(`Ingrese la nota
-        Si ha finalizado ingresando sus notas escriba "Listo"`)
-
-        if (sumaNueva == "Listo") {
-            break
-        } else {
-            suma = suma + parseInt(sumaNueva)
-        }
-    }
-    
-    let resultado = suma / (division - 2)
-    notaFinal(resultado)
-
 } else if (opc1 == "2") {
     let rangoNotas = 0
     for(rangoNotas ; rangoNotas <= 10 ; rangoNotas++) {
